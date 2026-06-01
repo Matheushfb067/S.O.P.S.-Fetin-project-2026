@@ -5,7 +5,7 @@ const inputClass =
 
 function GoogleMark() {
   return (
-    <span className="grid h-5 w-5 place-items-center rounded-full bg-white text-[0.72rem] font-bold text-[#1f2937] flex-shrink-0">
+    <span className="grid h-5 w-5 place-items-center rounded-full bg-white text-[0.72rem] font-bold text-[#1f2937] shrink-0">
       G
     </span>
   );
@@ -27,8 +27,7 @@ export default function LoginPage() {
   return (
     <main
       className="min-h-screen bg-[#050d18] text-[#cce0f5]"
-      style={{ fontFamily: "'IBM Plex Sans', sans-serif" }}
-    >
+      style={{ fontFamily: "'IBM Plex Sans', sans-serif" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap');
         .mono { font-family: 'IBM Plex Mono', monospace; }
@@ -61,7 +60,7 @@ export default function LoginPage() {
 
           {/* Brand */}
           <div className="relative z-10 flex items-center gap-3">
-            <div className="grid h-8 w-8 place-items-center rounded-[6px] bg-[#d41f1f] shadow-[0_0_18px_rgba(212,31,31,0.28)] flex-shrink-0">
+            <div className="grid h-8 w-8 place-items-center rounded-md bg-[#d41f1f] shadow-[0_0_18px_rgba(212,31,31,0.28)] shrink-0">
               <span className="text-lg font-bold leading-none text-white">+</span>
             </div>
             <div>
@@ -75,9 +74,9 @@ export default function LoginPage() {
           </div>
 
           {/* Hero */}
-          <div className="relative z-10 my-auto flex flex-col gap-5 max-w-[480px]">
-            <span className="mono inline-flex items-center gap-2 rounded-[5px] border border-[#264a72] bg-[#0d1f38] px-3 py-[5px] text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-[#5aa8ff] w-fit">
-              <span className="h-[7px] w-[7px] rounded-full bg-[#3ddc78] blink flex-shrink-0" />
+          <div className="relative z-10 my-auto flex flex-col gap-5 max-w-120">
+            <span className="mono inline-flex items-center gap-2 rounded-[5px] border border-[#264a72] bg-[#0d1f38] px-3 py-1.25 text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-[#5aa8ff] w-fit">
+              <span className="h-1.75 w-1.75 rounded-full bg-[#3ddc78] blink shrink-0" />
               Núcleo integrado online
             </span>
 
@@ -85,7 +84,7 @@ export default function LoginPage() {
               Acesso operacional para atendimento rápido.
             </h1>
 
-            <p className="text-[0.88rem] leading-7 text-[#7d98b3] max-w-[420px]">
+            <p className="text-[0.88rem] leading-7 text-[#7d98b3] max-w-105">
               Entre para sincronizar fichas, sinais vitais, chamados e dados clínicos entre socorristas e equipe médica.
             </p>
 
@@ -100,7 +99,7 @@ export default function LoginPage() {
           </div>
 
           {/* ECG bar */}
-          <div className="relative z-10 flex items-center gap-4 rounded-[8px] border border-[#182e4a] bg-[#050d18] px-5 h-[50px]">
+          <div className="relative z-10 flex items-center gap-4 rounded-lg border border-[#182e4a] bg-[#050d18] px-5 h-12.5">
             <span className="mono text-[0.62rem] text-[#3ddc78]">ECG</span>
             <span className="h-px flex-1 bg-[repeating-linear-gradient(90deg,#18385c_0_18px,transparent_18px_28px)]" />
             <span className="mono text-[0.62rem] text-[#4a6e90]">FC 088 BPM</span>
@@ -109,11 +108,11 @@ export default function LoginPage() {
 
         {/* — Painel direito — */}
         <div className="flex min-h-screen items-center justify-center px-5 py-8 sm:px-8 lg:min-h-0">
-          <div className="w-full max-w-[400px]">
+          <div className="w-full max-w-100">
 
             {/* Mobile brand */}
             <Link to="/" className="mb-6 inline-flex items-center gap-3 text-[#ddeeff] no-underline lg:hidden">
-              <span className="grid h-9 w-9 place-items-center rounded-[6px] bg-[#d41f1f] text-lg font-bold text-white">+</span>
+              <span className="grid h-9 w-9 place-items-center rounded-md bg-[#d41f1f] text-lg font-bold text-white">+</span>
               <span className="mono text-[0.84rem] font-semibold uppercase tracking-[0.08em]">SOPS 2.0</span>
             </Link>
 
@@ -132,7 +131,7 @@ export default function LoginPage() {
               <form className="space-y-3">
                 <div>
                   <label
-                    className="mono mb-1.5 block text-[0.58rem] font-semibold uppercase tracking-[0.1em] text-[#4a6e90]"
+                    className="mono mb-1.5 block text-[0.58rem] font-semibold uppercase tracking-widest text-[#4a6e90]"
                     htmlFor="email"
                   >
                     E-mail
@@ -143,7 +142,7 @@ export default function LoginPage() {
                 <div>
                   <div className="mb-1.5 flex items-center justify-between gap-3">
                     <label
-                      className="mono block text-[0.58rem] font-semibold uppercase tracking-[0.1em] text-[#4a6e90]"
+                      className="mono block text-[0.58rem] font-semibold uppercase tracking-widest text-[#4a6e90]"
                       htmlFor="password"
                     >
                       Senha
@@ -167,7 +166,7 @@ export default function LoginPage() {
 
                 <button
                   type="button"
-                  className="w-full rounded-[6px] border border-[#2070c8] bg-[#0c2340] px-5 py-2.5 text-[0.86rem] font-semibold text-[#88c8ff] transition hover:bg-[#103058]"
+                  className="w-full rounded-md border border-[#2070c8] bg-[#0c2340] px-5 py-2.5 text-[0.86rem] font-semibold text-[#88c8ff] transition hover:bg-[#103058]"
                 >
                   Entrar na plataforma
                 </button>
@@ -180,7 +179,7 @@ export default function LoginPage() {
 
                 <button
                   type="button"
-                  className="flex w-full items-center justify-center gap-2 rounded-[6px] border border-[#182e4a] bg-[#071220] px-5 py-2.5 text-[0.84rem] font-semibold text-[#cce0f5] transition hover:border-[#264a72] hover:bg-[#09162a]"
+                  className="flex w-full items-center justify-center gap-2 rounded-md border border-[#182e4a] bg-[#071220] px-5 py-2.5 text-[0.84rem] font-semibold text-[#cce0f5] transition hover:border-[#264a72] hover:bg-[#09162a]"
                 >
                   <GoogleMark />
                   Entrar com Google
@@ -201,7 +200,7 @@ export default function LoginPage() {
                 <Link
                   key={to}
                   to={to}
-                  className="rounded-[6px] border border-[#182e4a] bg-[#071220] px-2 py-2 text-[#4a6e90] no-underline transition hover:border-[#264a72] hover:text-[#5aa8ff]"
+                  className="rounded-md border border-[#182e4a] bg-[#071220] px-2 py-2 text-[#4a6e90] no-underline transition hover:border-[#264a72] hover:text-[#5aa8ff]"
                 >
                   {label}
                 </Link>
