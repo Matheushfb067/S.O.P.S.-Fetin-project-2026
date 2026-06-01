@@ -564,21 +564,28 @@ export default function PaginaSocorrista() {
       </div>
 
       {/* ── TX BAR ── */}
-      <div className="fixed bottom-0 left-0 z-[100] h-[44px] bg-[#09162a] border-t border-[#182e4a] flex items-center justify-between px-[22px]" style={{ right: "298px" }}>
-        <div className="flex items-center gap-4 mono text-[11px] text-[#4a6e90]">
-          <span className="flex items-center gap-[5px]"><div className="w-[6px] h-[6px] rounded-full bg-[#3ddc78] blink" />Wi-Fi 72%</span>
-          <span>OCR #2025-1142</span>
-          <span>Última sync: <span className="text-[#cce0f5]">{lastSync}</span></span>
+      <footer className="fixed bottom-0 left-0 right-[298px] z-[100] grid h-[44px] grid-cols-[minmax(0,1fr)_auto] items-center gap-5 overflow-hidden border-t border-[#182e4a] bg-[#09162a] px-[22px]">
+        <div className="mono flex min-w-0 items-center gap-4 overflow-hidden text-[11px] text-[#4a6e90]">
+          <span className="flex shrink-0 items-center gap-[5px]">
+            <span className="h-[6px] w-[6px] rounded-full bg-[#3ddc78] blink" />
+            Wi-Fi 72%
+          </span>
+          <span className="shrink-0">OCR #2025-1142</span>
+          <span className="min-w-0 truncate">
+            Última sync: <span className="text-[#cce0f5]">{lastSync}</span>
+          </span>
         </div>
-        <div className="flex items-center gap-2 mono text-[11px] text-[#3ddc78]">
-          <div className="text-[10px] px-2 py-[2px] rounded-[3px] bg-[#041f10] border border-[#14803a] text-[#3ddc78]">SAMU 192</div>
-          <span>Médico Dr. Alves aguardando</span>
+        <div className="mono flex min-w-0 items-center justify-end gap-2 overflow-hidden text-[11px] text-[#3ddc78]">
+          <span className="shrink-0 rounded-[3px] border border-[#14803a] bg-[#041f10] px-2 py-[2px] text-[10px] text-[#3ddc78]">
+            SAMU 192
+          </span>
+          <span className="min-w-0 truncate">Médico Dr. Alves aguardando</span>
         </div>
-      </div>
+      </footer>
 
       {/* ── TOAST ── */}
-      <div className={`fixed left-1/2 z-[999] bg-[#042010] border border-[#14803a] rounded-[7px] px-[18px] py-[11px] text-[#3ddc78] text-[12.5px] font-medium flex items-center gap-2 transition-transform duration-300
-        ${toast.show ? "-translate-x-1/2 translate-y-0" : "-translate-x-1/2 translate-y-[80px]"}`}
+      <div className={`fixed left-1/2 z-[999] bg-[#042010] border border-[#14803a] rounded-[7px] px-[18px] py-[11px] text-[#3ddc78] text-[12.5px] font-medium flex items-center gap-2 transition-all duration-300
+        ${toast.show ? "-translate-x-1/2 translate-y-0 opacity-100" : "pointer-events-none -translate-x-1/2 translate-y-[150px] opacity-0"}`}
         style={{ bottom: "58px" }}>
         <svg viewBox="0 0 24 24" className="w-[15px] h-[15px] fill-[#3ddc78]"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
         {toast.msg}
